@@ -8,5 +8,7 @@ Aplicação web em desenvolvimento para atender uma biblioteca itinerante em uma
 
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) **PHP** - Foi utizado para o backend da aplicação e se conectar ao banco de dados
 
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) **Javascript** - Foi utizado para gerar interação com usuário, bem como tornar a experiência da aplicação como APP por meio de PWA
+
 ![Mysql](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white) **Mysql** - Foi utizado para o gereciamento do banco de dados
 
