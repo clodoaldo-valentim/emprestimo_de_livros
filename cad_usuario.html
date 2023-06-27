@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+     <!--links para biblioteca de máscara JS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        //pwa -  registrar o service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('Service worker registered: ', registration);
+          }, function(err) {
+            console.log('Service worker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de usuário</h1>
+    <form action="submit-user.php" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Nome completo"required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@gmail.com"required>
+        <br><br>
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone" name="phone" placeholder="84 98756-4940" required>
+        <br><br>
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" placeholder="apenas dois números ex.: 05" required>
+        <br><br>
+        <label for="birth">Nascimento:</label>
+        <input type="number" id="birth" name="birth" placeholder="ano-mês-dia"required>
+        <br><br>
+        <label for="responsible">Responsável (somente se menor de idade):</label>
+        <input type="text" id="responsible" name="responsible">
+        <br><br>
+        <input type="submit" value="Cadastrar">
+      </form>
+      <script>
+        $(document).ready(function(){
+          $('#phone').mask('(00) 0000-0000');
+          $('#age').mask('02');
+          $('#birth').mask('0000-00-00');
+          $('#email').mask('A', {
+            translation: {
+              'A': {pattern: /[\w@\-.+]/, recursive: true}
+            }
+          });
+        });
+      </script>
+    </body>

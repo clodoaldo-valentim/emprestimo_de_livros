@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel</title>
+    <link rel="stylesheet" href="painel.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        //pwa -  registrar o service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js').then(function(registration) {
+            console.log('Service worker registered: ', registration);
+          }, function(err) {
+            console.log('Service worker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+</head>
+<body>
+    <h1>Painel de consultas</h1>
+    <header>
+    
+    </header>
+       <div class="container">
+        <h1>Bem-vindo à Amanajé</h1>
+        <p>A nossa biblioteca intinerante, faça a sua consulta</p>
+        <table>
+            <tr>
+                <td>
+                    <div class="botao_painel">
+                    <a href="consulta_por_livro.html" id="botao_painel">
+                        <input type="submit" value="Consulta por livro">
+                    </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="botao_painel">
+                        <a href="consulta_status_do_livro.html">
+                            <input type="submit" value="Consulta status do livro">
+                        </a>
+                    </div>
+                </td>     
+                
+            </tr>
+            <tr>
+                <td>
+                    <div class="botao_painel">
+                        <a href="consulta_geral.php">
+                            <input type="submit" value="Consulta todos os livros">
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="botao_painel">
+                    <a href="consulta_por_livro.html">
+                        <input type="submit" value="Consulta por livro">
+                    </a>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="botao_painel">
+                    <a href="consulta_status_do_livro.html">
+                        <input type="submit" value="Consulta status do livro">
+                    </a>
+                    </div>
+                </td>
+                <td>
+                    <div class="botao_painel">
+                    <a href="consulta_todos_os_livros_emprestados.php">
+                        <input type="submit" value="Consulta livros emprestados">
+                    </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+      <script>
+        const menuButton = document.querySelector('.menu-button');
+        const menu = document.querySelector('.menu');
+
+        menuButton.addEventListener('Onclick', () => {
+        menu.classList.toggle('open');
+        });
+
+        window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+        menu.style.display = 'flex';
+        } else {
+            menu.style.display = 'none';
+        }
+        });
+
+      </script>
+</body>
+</html>

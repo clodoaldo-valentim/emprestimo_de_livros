@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="processar_devolucao.php">
+        <label for="search_book">Buscar livro:</label>
+        <input type="text" id="search_book" name="registration_number"><br><br>
+
+        <label for="search_book">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="devolvido">Devolvido</option>
+          <option value="atrasado">Atrasado</option>
+          <option value="renovado">Renovado</option>
+        </select><br>
+      
+        <button type="submit">Atualizar</button>
+      </form>
+         
+</body>
+</html>

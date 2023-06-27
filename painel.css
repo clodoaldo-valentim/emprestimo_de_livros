@@ -1,0 +1,128 @@
+/* Estilo base */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8cea7a;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Menu */
+  
+  .menu {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+  network error
+  Continuação do código CSS:
+  
+  align-items: center;
+  height: 50px;
+  }
+  
+  .menu li {
+  list-style: none;
+  }
+  
+  .menu a {
+  color: #fff;
+  padding: 15px;
+  }
+  
+  .menu a:hover {
+  background-color: #333;
+  }
+  
+  /* Conteúdo */
+  
+  .container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 10px;
+  }
+  
+  h1, h2, h3 {
+  color: #333;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu-button {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .menu-button span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      display: none;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      position: absolute;
+      top: 55px;
+      left: 0;
+      padding: 10px;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+  
+    .menu-button {
+      display: block;
+    }
+  }
+ 

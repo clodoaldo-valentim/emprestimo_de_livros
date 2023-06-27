@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Livros</title>
+  <script>
+    // Validação de formulário de cadastro de livros
+document.getElementById("book-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  var title = document.getElementById("title").value;
+  var author = document.getElementById("author").value;
+  var subject = document.getElementById("subject").value;
+
+  if (!title || !author || !subject) {
+    alert("Por favor, preencha todos os campos obrigatórios");
+  } else {
+    // Envia o formulário para o servidor
+    this.submit();
+  }
+});
+
+// Atualização em tempo real da lista de livros
+setInterval(function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "get-books.php", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var books = JSON.parse(xhr.responseText);
+      var bookList = document.getElementById("book-list");
+      bookList.innerHTML = "";
+      for (var i = 0; i < books.length; i++) {
+        bookList.innerHTML += "<tr><td>" + books[i].title + "</td><td>" + books[i].author + "</td><td>" + books[i].subject + "</td></tr>";
+      }
+    }
+  };
+  xhr.send();
+}, 1000);
+   //pwa -  registrar o service worker
+   if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('Service worker registered: ', registration);
+        }, function(err) {
+          console.log('Service worker registration failed: ', err);
+        });
+      });
+    }
+
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+  <h1>Cadastro de Livros</h1>
+  <div class="form">
+  <form action="submit-book.php" method="post">
+    <label for="title">Título:</label>
+    <input type="text" id="title" name="title" required><br><br>
+    <label for="author">Autor:</label>
+    <input type="text" id="author" name="author" required><br><br>
+    <label for="subject">Assunto:</label>
+    <input type="text" id="subject" name="subject" required><br><br>
+    <label for="edition">Edição:</label>
+    <input type="text" id="edition" name="edition" required><br><br>
+    <label for="year">Ano:</label>
+    <input type="text" id="year" name="year" required><br><br>
+    <label for="registration-number">Número de Registro:</label>
+    <input type="text" id="registration-number" name="registration-number" required><br><br>
+    <label for="call-number">Número de Chamada:</label>
+    <input type="text" id="call-number" name="call-number" required><br><br>
+    <label for="publication-year">Ano de Publicação:</label>
+    <input type="text" id="publication-year" name="publication-year" required><br><br>
+    <label for="city">Cidade:</label>
+    <input type="text" id="city" name="city" required><br><br>
+    <input type="submit" value="Enviar">
+  </form>
+  </div>
+  </div>
+</body>
+</html>
